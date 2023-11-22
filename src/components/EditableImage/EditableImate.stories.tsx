@@ -11,3 +11,17 @@ export const Default: StoryObj<typeof EditableImage> = {
     src: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
   },
 };
+
+export const Blurred: StoryObj<typeof EditableImage> = {
+  args: {
+    src: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
+    blur: 10
+  },
+};
+
+export const Grayscaled: StoryObj<typeof EditableImage> = {
+  args: {
+    src: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
+    grayscale: 100
+  },
+};

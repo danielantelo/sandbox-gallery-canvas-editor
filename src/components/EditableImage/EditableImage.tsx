@@ -1,7 +1,21 @@
 import { useEffect, useRef } from "react";
 
-export function EditableImage({ src }: { src: string }) {
-  const canvas = useRef<HTMLCanvasElement>();
+interface EditableImageProps {
+  src: string;
+  width: number;
+  height: number;
+  blur?: number;
+  grayscale?: number;
+}
+
+export function EditableImage({
+  src,
+  width,
+  height,
+  blur = 0,
+  grayscale = 0,
+}: EditableImageProps) {
+  const canvas = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (canvas.current) {
@@ -9,24 +23,17 @@ export function EditableImage({ src }: { src: string }) {
       const image = new Image();
       image.src = src;
       image.onload = () => {
-        context?.drawImage(image, 0, 0, image.width, image.height);
+        context?.drawImage(image, 0, 0, width, height);
       };
     }
-  }, []);
-
-  // const onDownload = () => {
-  //   var imgBase64 = canvas.current.toDataURL();
-  //   // console.log("imgBase64:", imgBase64);
-  //   var imgURL = "data:image/" + imgBase64;
-  //   var triggerDownload = $("<a>").attr("href", imgURL).attr("download", "layout_"+new Date().getTime()+".jpeg").appendTo("body");
-  //   triggerDownload[0].click();
-  //   triggerDownload.remove();
-  // };
+  }, [src]);
 
   return (
-    <>
-      {/* <canvas ref={canvas} height={500} width={500} />
-      <button onClick={onDownload}>dl</button> */}
-    </>
+    <canvas
+      ref={canvas}
+      height={height}
+      width={width}
+      style={{ display: 'block', filter: `blur(${blur}px) grayscale(${grayscale}%)` }}
+    />
   );
 }
