@@ -32,7 +32,5 @@ describe("GalleryListing", () => {
       "http://localhost/edit/D001"
     );
     expect(getByText("by DanA")).toBeTruthy();
-
-    // @TODO fire click event and confirm url
   });
 });

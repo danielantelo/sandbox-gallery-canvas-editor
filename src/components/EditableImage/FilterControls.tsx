@@ -1,4 +1,4 @@
-import { Box, Slider, Typography } from "@mui/material";
+import { Box, Slider, Stack, Typography } from "@mui/material";
 import { SyntheticEvent } from "react";
 
 interface FilterControlsProps {
@@ -14,35 +14,42 @@ export function FilterControls({
   onChangeBlur,
   onChangeGrayscale,
 }: FilterControlsProps) {
-  const handleChangeBlur = (e: Event | SyntheticEvent<Element, Event>, value: number | number[]) =>
-    onChangeBlur(value as number);
+  const handleChangeBlur = (
+    e: Event | SyntheticEvent<Element, Event>,
+    value: number | number[]
+  ) => onChangeBlur(value as number);
 
-  const handleChangeGrayscale = (e: Event | SyntheticEvent<Element, Event>, value: number | number[]) =>
-    onChangeGrayscale(value as number);
+  const handleChangeGrayscale = (
+    e: Event | SyntheticEvent<Element, Event>,
+    value: number | number[]
+  ) => onChangeGrayscale(value as number);
 
   return (
-    <Box padding={2}>
-      <Typography id="blur-slider">Blur</Typography>
-      <Slider
-        aria-labelledby="blur-slider"
-        value={blur}
-        aria-label="Blur level"
-        min={0}
-        max={10}
-        valueLabelDisplay="auto"
-        onChangeCommitted={handleChangeBlur}
-      />
-
-      <Typography id="grayscale-slider">Grayscale (%)</Typography>
-      <Slider
-        aria-labelledby="grayscale-slider"
-        value={grayscale}
-        aria-label="Grayscale level"
-        min={0}
-        max={100}
-        valueLabelDisplay="auto"
-        onChangeCommitted={handleChangeGrayscale}
-      />
-    </Box>
+    <Stack direction={"column"} gap={1} padding={2}>
+      <Box>
+        <Typography id="blur-slider">Blur</Typography>
+        <Slider
+          aria-labelledby="blur-slider"
+          defaultValue={blur}
+          aria-label="Blur level"
+          min={0}
+          max={10}
+          valueLabelDisplay="auto"
+          onChangeCommitted={handleChangeBlur}
+        />
+      </Box>
+      <Box>
+        <Typography id="grayscale-slider">Grayscale (%)</Typography>
+        <Slider
+          aria-labelledby="grayscale-slider"
+          defaultValue={grayscale}
+          aria-label="Grayscale level"
+          min={0}
+          max={100}
+          valueLabelDisplay="auto"
+          onChangeCommitted={handleChangeGrayscale}
+        />
+      </Box>
+    </Stack>
   );
 }
