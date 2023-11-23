@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-interface EditableImageProps {
+export interface EditableImageProps {
   src: string;
   width: number;
   height: number;
@@ -26,7 +26,7 @@ export function EditableImage({
         context?.drawImage(image, 0, 0, width, height);
       };
     }
-  }, [src]);
+  }, [src, width, height]);
 
   return (
     <canvas

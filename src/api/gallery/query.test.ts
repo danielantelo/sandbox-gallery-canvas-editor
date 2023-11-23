@@ -1,6 +1,6 @@
 import { fetchImage, fetchImages } from "./query";
-import mockListResponse from "./__mocks__/list.json";
-import mockInfoResponce from "./__mocks__/info.json";
+import mockListResponse from "./__fixtures__/list.json";
+import mockInfoResponce from "./__fixtures__/info.json";
 
 describe("fetchImages", () => {
   afterEach(() => {

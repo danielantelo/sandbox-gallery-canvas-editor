@@ -4,5 +4,5 @@ I'll be tackling this challenge in a bottom up approach, making use of storybook
 
 With these type of taks I like to pick new libraries to play with. I usually use `Chakra` for web apps and `NativeBase` for mobile apps, so to expand my horizons and because you metioned you use `materialui`, I will use it for this challenge.
 
-My data visualisation has been limited to `react-table` and `highcharts` for the past years, so using `canvas` for this challenge will be very interesting.
+My data/content visualisation has been limited to `react-table` and `highcharts` for the past years, so using `canvas` for this challenge will be very interesting.
 

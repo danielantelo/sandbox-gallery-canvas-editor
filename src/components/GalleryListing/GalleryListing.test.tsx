@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { GalleryListing } from "./GalleryListing";
-import imagesMock from "./__mocks__/images.json";
+import imagesMock from "./__fixtures__/images.json";
 
 describe("GalleryListing", () => {
   it("renders expected list of images", () => {
@@ -25,8 +25,8 @@ describe("GalleryListing", () => {
 
     const firstItem = screen.getAllByRole("listitem")[0];
     const { getByText, getByRole } = within(firstItem);
-    expect((getByRole("img") as HTMLImageElement).src).toContain(
-      imagesMock[0].src
+    expect((getByRole("img") as HTMLImageElement).src).toEqual(
+      imagesMock[0].preview
     );
     expect((getByRole("link") as HTMLAnchorElement).href).toBe(
       "http://localhost/edit/D001"
