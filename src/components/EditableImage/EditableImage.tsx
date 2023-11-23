@@ -21,7 +21,7 @@ export const EditableImage = forwardRef<HTMLCanvasElement, EditableImageProps>(
           grayscale: `${grayscale}%`,
         });
       }
-    }, [src, width, height, blur, grayscale]);
+    }, [src, width, height, blur, grayscale, ref]);
 
     return <canvas ref={ref} height={height} width={width} />;
   }
