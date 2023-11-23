@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect } from "react";
+import { drawImage } from "../../utils/canvas";
 
 export interface EditableImageProps {
   src: string;
@@ -8,32 +9,20 @@ export interface EditableImageProps {
   grayscale?: number;
 }
 
-export function EditableImage({
-  src,
-  width,
-  height,
-  blur = 0,
-  grayscale = 0,
-}: EditableImageProps) {
-  const canvas = useRef<HTMLCanvasElement>(null);
+export const EditableImage = forwardRef<HTMLCanvasElement, EditableImageProps>(
+  (props, ref) => {
+    const { src, width, height, blur = 0, grayscale = 0 } = props;
 
-  useEffect(() => {
-    if (canvas.current) {
-      const context = canvas.current.getContext("2d");
-      const image = new Image();
-      image.src = src;
-      image.onload = () => {
-        context?.drawImage(image, 0, 0, width, height);
-      };
-    }
-  }, [src, width, height]);
+    useEffect(() => {
+      // @TODO fix typings to avoid in check
+      if (ref && "current" in ref && ref.current) {
+        drawImage(ref.current, src, [width, height], {
+          blur: `${blur}px`,
+          grayscale: `${grayscale}%`,
+        });
+      }
+    }, [src, width, height, blur, grayscale]);
 
-  return (
-    <canvas
-      ref={canvas}
-      height={height}
-      width={width}
-      style={{ display: 'block', filter: `blur(${blur}px) grayscale(${grayscale}%)` }}
-    />
-  );
-}
+    return <canvas ref={ref} height={height} width={width} />;
+  }
+);
