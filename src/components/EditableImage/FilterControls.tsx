@@ -9,8 +9,8 @@ interface FilterControlsProps {
 }
 
 export function FilterControls({
-  blur,
-  grayscale,
+  blur = 0,
+  grayscale = 0,
   onChangeBlur,
   onChangeGrayscale,
 }: FilterControlsProps) {
@@ -25,7 +25,7 @@ export function FilterControls({
       <Typography id="blur-slider">Blur</Typography>
       <Slider
         aria-labelledby="blur-slider"
-        defaultValue={blur}
+        value={blur}
         aria-label="Blur level"
         min={0}
         max={10}
@@ -36,7 +36,7 @@ export function FilterControls({
       <Typography id="grayscale-slider">Grayscale (%)</Typography>
       <Slider
         aria-labelledby="grayscale-slider"
-        defaultValue={grayscale}
+        value={grayscale}
         aria-label="Grayscale level"
         min={0}
         max={100}

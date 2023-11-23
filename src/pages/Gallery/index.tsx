@@ -1,23 +1,17 @@
 import { useQuery } from "react-query";
-import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, Stack } from "@mui/material";
 import { fetchImages } from "../../api/gallery/query";
 import { GalleryListing } from "../../components/GalleryListing/GalleryListing";
 import { Loading } from "../../components/Loading";
+import { usePagination } from "./usePagination";
 
 export default function Gallery() {
-  const navigate = useNavigate();
-  const { page } = useParams<{ page: string }>();
-  const pageNumber = Number(page);
-  
+  const { pageNumber, onPrevPage, onNextPage } = usePagination();
   const { isLoading, error, data } = useQuery({
     queryKey: ["gallery", pageNumber],
     queryFn: () => fetchImages(pageNumber),
     keepPreviousData: true,
   });
-
-  const onPrevPage = () => navigate(`/page/${pageNumber - 1}`);
-  const onNextPage = () => navigate(`/page/${pageNumber + 1}`);
 
   if (isLoading) return <Loading />;
   if (!data || error) return <>An error has occurred</>;

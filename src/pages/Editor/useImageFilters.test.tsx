@@ -2,14 +2,16 @@ import { act, renderHook, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { useImageFilters } from "./useImageFilters";
 
+const wrapper = ({ children }: { children: JSX.Element }) => (
+  <BrowserRouter>{children}</BrowserRouter>
+);
+
 describe("useImageFilters", () => {
   it("manages blur and grayscale values", async () => {
-    const wrapper = ({ children }: { children: JSX.Element }) => (
-      <BrowserRouter>{children}</BrowserRouter>
-    );
     const { result } = renderHook(() => useImageFilters(), {
       wrapper,
     });
+    
     expect(result.current.blur).toEqual(0);
     expect(result.current.grayscale).toEqual(0);
 
