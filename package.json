@@ -8,7 +8,6 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
-    "jest-canvas-mock": "^2.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
@@ -33,7 +32,10 @@
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.16",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cypress": "^13.6.0",
+    "cypress-storybook-commands": "0.3.3",
     "eslint-plugin-storybook": "^0.6.15",
+    "jest-canvas-mock": "^2.5.2",
     "prop-types": "^15.8.1",
     "storybook": "^7.5.3",
     "storybook-addon-react-router-v6": "^2.0.10",
@@ -48,7 +50,9 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cy": "cypress run --e2e --browser chrome --headless --config baseUrl=http://localhost:3000/,specPattern='cypress/integration/webapp/*'",
+    "cy:storybook": "cypress run --e2e --browser chrome --headless --config baseUrl=http://localhost:6006/,specPattern='cypress/integration/storybook/*'"
   },
   "eslintConfig": {
     "extends": [

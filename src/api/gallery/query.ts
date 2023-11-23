@@ -15,23 +15,26 @@ export interface GalleryImagesResponse {
     id: string;
     author: string;
     preview: string;
+    src: string;
   }[];
 }
 
 export async function fetchImages(
   page = 1,
-  limit = 30
+  limit = 20
 ): Promise<GalleryImagesResponse> {
   const request = await fetch(`${baseUrl}/v2/list?page=${page}&limit=${limit}`);
   const response: ApiImage[] = await request.json();
+  const images = response.map(({ id, author, download_url }) => ({
+    id,
+    author,
+    preview: `https://picsum.photos/id/${id}/200`,
+    src: download_url,
+  }));
 
   return {
     hasMore: !!request.headers.get("Link")?.includes('rel="next"'),
-    images: response.map(({ id, author }) => ({
-      id,
-      author,
-      preview: `https://picsum.photos/id/${id}/250`,
-    })),
+    images,
   };
 }
 

@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { fetchImages } from "../../api/gallery/query";
 import { GalleryListing } from "../../components/GalleryListing/GalleryListing";
 import { Loading } from "../../components/Loading";
@@ -24,13 +26,15 @@ export default function Gallery() {
       justifyContent={"space-between"}
     >
       <Button disabled={pageNumber <= 1} onClick={onPrevPage}>
-        prev
+        <KeyboardArrowLeftIcon />
+        <Typography textTransform={"lowercase"}>Prev</Typography>
       </Button>
       <Box overflow={"auto"}>
         <GalleryListing images={data.images} />
       </Box>
       <Button disabled={!data.hasMore} onClick={onNextPage}>
-        next
+        <Typography textTransform={"lowercase"}>Next</Typography>
+        <KeyboardArrowRightIcon />
       </Button>
     </Stack>
   );

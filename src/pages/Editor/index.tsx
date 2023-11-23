@@ -59,7 +59,7 @@ export default function Editor() {
         grayscale={grayscale}
       />
       <Box
-        position={"absolute"}
+        position={"fixed"}
         top={50}
         right={50}
         bgcolor={"white"}

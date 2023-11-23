@@ -7,9 +7,9 @@ export default {
 } as Meta<typeof EditableImage>;
 
 const baseArgs: EditableImageProps = {
-  src: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-  height: 500,
-  width: 500,
+  src: "https://picsum.photos/id/194/200",
+  height: 200,
+  width: 200,
 };
 
 export const Default: StoryObj<typeof EditableImage> = {

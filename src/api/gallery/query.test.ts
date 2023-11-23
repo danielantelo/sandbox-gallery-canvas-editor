@@ -27,6 +27,7 @@ describe("fetchImages", () => {
       id: "0",
       author: "Alejandro Escamilla",
       preview: "https://picsum.photos/id/0/250",
+      src: "https://picsum.photos/...",
     });
   });
 
