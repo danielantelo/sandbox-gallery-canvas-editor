@@ -11,6 +11,6 @@ export function usePagination() {
   return {
     pageNumber,
     onPrevPage,
-    onNextPage
-  }
+    onNextPage,
+  };
 }

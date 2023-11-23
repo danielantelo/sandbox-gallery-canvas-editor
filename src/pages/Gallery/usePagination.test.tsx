@@ -1,4 +1,4 @@
-import { act, renderHook, waitFor } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { usePagination } from "./usePagination";
 
@@ -11,7 +11,7 @@ jest.mock("react-router-dom", () => ({
 
 describe("usePagination", () => {
   it("goes to next", async () => {
-    const { result, rerender } = renderHook(() => usePagination(), {
+    const { result } = renderHook(() => usePagination(), {
       wrapper: ({ children }: { children: JSX.Element }) => (
         <BrowserRouter>{children}</BrowserRouter>
       ),
@@ -19,12 +19,9 @@ describe("usePagination", () => {
 
     act(() => {
       result.current.onNextPage();
-      rerender();
     });
 
-    await waitFor(() => {
-      expect(window.location.href).toBe("http://localhost/page/3");
-    });
+    expect(window.location.href).toBe("http://localhost/page/3");
   });
 
   it("goes to previous page", async () => {
@@ -38,8 +35,6 @@ describe("usePagination", () => {
       result.current.onPrevPage();
     });
 
-    await waitFor(() => {
-      expect(window.location.href).toBe("http://localhost/page/1");
-    });
+    expect(window.location.href).toBe("http://localhost/page/1");
   });
 });

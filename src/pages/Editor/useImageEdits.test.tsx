@@ -1,4 +1,4 @@
-import { act, renderHook, waitFor } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { useImageEdits } from "./useImageEdits";
 
@@ -18,13 +18,9 @@ describe("useImageEdits", () => {
       result.current.onChangeDimensions(100, 80);
     });
 
-    await waitFor(() => {
-      expect(result.current.width).toEqual(100);
-      expect(result.current.height).toEqual(80);
-      expect(window.location.href).toBe(
-        "http://localhost/?width=100&height=80"
-      );
-    });
+    expect(result.current.width).toEqual(100);
+    expect(result.current.height).toEqual(80);
+    expect(window.location.href).toBe("http://localhost/?width=100&height=80");
   });
 
   it("manages blur and grayscale values", async () => {
@@ -41,20 +37,14 @@ describe("useImageEdits", () => {
       result.current.onChangeBlur(5);
     });
 
-    await waitFor(() => {
-      expect(result.current.blur).toEqual(5);
-      expect(window.location.href).toBe("http://localhost/?blur=5");
-    });
+    expect(result.current.blur).toEqual(5);
+    expect(window.location.href).toBe("http://localhost/?blur=5");
 
     act(() => {
       result.current.onChangeGrayscale(80);
     });
 
-    await waitFor(() => {
-      expect(result.current.grayscale).toEqual(80);
-      expect(window.location.href).toBe(
-        "http://localhost/?blur=5&grayscale=80"
-      );
-    });
+    expect(result.current.grayscale).toEqual(80);
+    expect(window.location.href).toBe("http://localhost/?blur=5&grayscale=80");
   });
 });
