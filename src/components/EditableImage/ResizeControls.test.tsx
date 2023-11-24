@@ -10,6 +10,7 @@ describe("ResizeControls", () => {
       <ResizeControls width={500} height={500} onChangeDimensions={mockedFn} />
     );
 
+    // eslint-disable-next-line testing-library/no-unnecessary-act
     act(() => {
       // @TODO figure typing in materialui TextInput
       // userEvent.type(screen.getByLabelText("New width"), "600");

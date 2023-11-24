@@ -26,7 +26,7 @@ describe("fetchImages", () => {
     expect(response.images[0]).toEqual({
       id: "0",
       author: "Alejandro Escamilla",
-      preview: "https://picsum.photos/id/0/250",
+      preview: "https://picsum.photos/id/0/200",
       src: "https://picsum.photos/...",
     });
   });

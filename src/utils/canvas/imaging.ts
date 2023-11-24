@@ -24,7 +24,7 @@ export function drawImage(
 export function downloadAsImage(canvas: HTMLCanvasElement, fileName: string) {
   const imageContent = canvas.toDataURL();
   const downloadLink = document.createElement("a");
-  downloadLink.download = `${fileName}.png`;
+  downloadLink.download = fileName;
   downloadLink.href = imageContent;
   downloadLink.click();
 }

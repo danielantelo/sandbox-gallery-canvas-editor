@@ -18,8 +18,9 @@ import {
   FilterControls,
   ResizeControls,
 } from "../../components/EditableImage";
-import { useImageEdits } from "./useImageEdits";
 import { downloadAsImage } from "../../utils/canvas";
+import { downloadImage } from "../../utils/images";
+import { useImageEdits } from "./useImageEdits";
 
 export default function Editor() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -44,8 +45,12 @@ export default function Editor() {
 
   const onDownloadImage = () => {
     if (canvasRef.current) {
-      downloadAsImage(canvasRef.current, 'edited');
+      downloadAsImage(canvasRef.current, "edited.png");
     }
+  };
+
+  const onDownloadOriginal = () => {
+    downloadImage(data.src, 'original.png');
   };
 
   return (
@@ -110,6 +115,9 @@ export default function Editor() {
             <Stack>
               <Button variant="contained" onClick={onDownloadImage}>
                 Download Edited Image
+              </Button>
+              <Button onClick={onDownloadOriginal}>
+                Download Original Image
               </Button>
             </Stack>
           </AccordionDetails>

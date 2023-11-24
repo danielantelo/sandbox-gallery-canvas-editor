@@ -49,7 +49,7 @@ describe("downloadAsImage", () => {
       .spyOn(HTMLCanvasElement.prototype, "toDataURL")
       .mockImplementationOnce(() => "data:image/png;base64...");
 
-    downloadAsImage(canvas, "test");
+    downloadAsImage(canvas, "test.png");
 
     expect(a.download).toBe("test.png");
     expect(a.href).toBe("data:image/png;base64...");
