@@ -8,7 +8,7 @@ My data/content visualisation has been limited to **react-table** and **highchar
 
 ## Approach
 
-### Gallery 
+### Gallery
 
 As we want to be able to refresh and navigate back and forth in the browser we can use **react-router** and **url params** to preserve state. This has the added benefit of **shareable links**.
 
@@ -43,7 +43,7 @@ Code confidence is THE most important thing for releasing software, so it is imp
 - **visual regression component tests** using cypress and storybook, run with `npm run cy:storybook` and you can view regression snapshots in `cypress/snapshots/storybook`
 - **functional and visual regression page tests** using cypress and mocking the backend of the react app capture full page snapshots and ensure main functionality works via the browser, run with `npm run cy` and you can view snapshots in `cypress/snapshots`
 
-In a production ready setup we would also add **e2e tests** against a deployed instance and pontential some sort of **contract tests** for the api's. 
+In a production ready setup we would also add **e2e tests** against a deployed instance and pontential some sort of **contract tests** for the api's.
 
 ## Deployed version
 
@@ -51,8 +51,8 @@ Can view the built version @ (https://danielantelo.github.io/synthesia/)[https:/
 
 ## What is missing that I would have liked to include
 
-- For a speedier editor experience, the initial image could be a fetched with a width of the browser width to ensure a smaller download or alternatively a prefetch of the full size image for when you select to edit it
-- Nice animated transition between gallery pages
+- Use a third party libary or polyfill for context filters to work on safari
+- For a speedier editor experience, the initial image could be fetched with the width of the browser to ensure a smaller download or alternatively we could do a prefetch of the full size image for when you select to edit it
+- A nicely animated transition between gallery pages
 - Some responsive behaviour to the gallery listing
 - Proper cypress tests, I only added the storybook visual regression and started on the webapp visual/functional and these integrated properly into gh actions
-
