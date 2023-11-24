@@ -22,7 +22,7 @@ For the editor I opted to fetch the selected image info and use a **canvas** to 
 
 The API provides endpoints to fetch images with different dimensions and greyscale and blur, but I thought having to fetch and re-render images would be much slower than the canvas.
 
-To download the modified image I just covert the canvas to a data url and force a download via javascript.
+To download the modified image I just covert the canvas to a data url and force a download via javascript. Similarly to download the original image to avoid any cross-origin issues and ensure it forces a file download I fetch the original image into blob content string and use it as the href of an anchor element.
 
 ## Structure
 
@@ -54,4 +54,4 @@ Can view the built version @ (https://danielantelo.github.io/synthesia/)[https:/
 - For a speedier editor experience, the initial image could be a fetched with a width of the browser width to ensure a smaller download or alternatively a prefetch of the full size image for when you select to edit it
 - Nice animated transition between gallery pages
 - Proper cypress tests, I only added the storybook visual regression and started on the webapp visual/functional
-- Github actions to test and deploy the app to gh-pages
+
