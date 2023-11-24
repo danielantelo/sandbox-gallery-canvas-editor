@@ -52,6 +52,7 @@ export function FilterControls({
           min={0}
           max={10}
           valueLabelDisplay="auto"
+          onChange={(e, value: number | number[]) => setCurrentBlur(Number(value))}
           onChangeCommitted={handleChangeBlur}
         />
       </Box>
@@ -64,6 +65,7 @@ export function FilterControls({
           min={0}
           max={100}
           valueLabelDisplay="auto"
+          onChange={(e, value: number | number[]) => setCurrentGrayscale(Number(value))}
           onChangeCommitted={handleChangeGrayscale}
         />
       </Box>
