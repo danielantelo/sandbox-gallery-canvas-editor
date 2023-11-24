@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "https://danielantelo.github.io/synthesia/static/css/main.e6c13ad2.css",
-    "main.js": "https://danielantelo.github.io/synthesia/static/js/main.90536950.js",
-    "static/js/645.87377970.chunk.js": "https://danielantelo.github.io/synthesia/static/js/645.87377970.chunk.js",
-    "static/js/738.b4b3b528.chunk.js": "https://danielantelo.github.io/synthesia/static/js/738.b4b3b528.chunk.js",
+    "main.js": "https://danielantelo.github.io/synthesia/static/js/main.395027b8.js",
+    "static/js/645.6b4106e0.chunk.js": "https://danielantelo.github.io/synthesia/static/js/645.6b4106e0.chunk.js",
+    "static/js/738.d9386af3.chunk.js": "https://danielantelo.github.io/synthesia/static/js/738.d9386af3.chunk.js",
     "static/js/787.6de0a163.chunk.js": "https://danielantelo.github.io/synthesia/static/js/787.6de0a163.chunk.js",
     "static/js/325.ab0ac53a.chunk.js": "https://danielantelo.github.io/synthesia/static/js/325.ab0ac53a.chunk.js",
     "static/js/236.fa573abf.chunk.js": "https://danielantelo.github.io/synthesia/static/js/236.fa573abf.chunk.js",
     "static/media/logo.svg": "https://danielantelo.github.io/synthesia/static/media/logo.aeda46160dd21ff2f0dccbe469bef0bb.svg",
     "index.html": "https://danielantelo.github.io/synthesia/index.html",
     "main.e6c13ad2.css.map": "https://danielantelo.github.io/synthesia/static/css/main.e6c13ad2.css.map",
-    "main.90536950.js.map": "https://danielantelo.github.io/synthesia/static/js/main.90536950.js.map",
-    "645.87377970.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/645.87377970.chunk.js.map",
-    "738.b4b3b528.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/738.b4b3b528.chunk.js.map",
+    "main.395027b8.js.map": "https://danielantelo.github.io/synthesia/static/js/main.395027b8.js.map",
+    "645.6b4106e0.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/645.6b4106e0.chunk.js.map",
+    "738.d9386af3.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/738.d9386af3.chunk.js.map",
     "787.6de0a163.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/787.6de0a163.chunk.js.map",
     "325.ab0ac53a.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/325.ab0ac53a.chunk.js.map",
     "236.fa573abf.chunk.js.map": "https://danielantelo.github.io/synthesia/static/js/236.fa573abf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.90536950.js"
+    "static/js/main.395027b8.js"
   ]
 }
