@@ -24,6 +24,10 @@ export const EditableImage = forwardRef<HTMLCanvasElement, EditableImageProps>(
       }
     }, [src, width, height, blur, grayscale, canvasRef]);
 
-    return <canvas ref={canvasRef} height={height} width={width} />;
+    return (
+      <>
+        <canvas ref={canvasRef} height={height} width={width} />
+      </>
+    );
   }
 );
