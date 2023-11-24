@@ -38,20 +38,20 @@ export function ResizeControls({
   return (
     <Stack direction={"column"} gap={1} padding={1}>
       <TextField
-        data-testid={"width-textfield"}
         required
         id="outlined-required"
         label="Width"
         value={currentWidth}
         onChange={onChangeWidth}
+        name={'width'}
       />
       <TextField
-        data-testid={"height-textfield"}
         required
         id="outlined-required"
         label="Height"
         value={currentHeight}
         onChange={onChangeHeight}
+        name={'height'}
       />
       <Button variant="contained" onClick={handleApply}>
         Apply

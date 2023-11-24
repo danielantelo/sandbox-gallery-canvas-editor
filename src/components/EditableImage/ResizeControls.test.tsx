@@ -12,12 +12,12 @@ describe("ResizeControls", () => {
 
     // eslint-disable-next-line testing-library/no-unnecessary-act
     act(() => {
-      // @TODO figure typing in materialui TextInput
-      // userEvent.type(screen.getByLabelText("New width"), "600");
-      // userEvent.type(screen.getByLabelText("New height"), "700");
+      userEvent.type(screen.getByRole("textbox", { name: /width/i }), "0");
+      // @TODO figure out why this one is picking up the width box again
+      //userEvent.type(screen.getByRole("textbox", { name: /height/i }), "1");
       userEvent.click(screen.getByText("Apply"));
     });
 
-    expect(mockedFn).toHaveBeenCalledWith(500, 500);
+    expect(mockedFn).toHaveBeenCalledWith(5000, 500);
   });
 });
