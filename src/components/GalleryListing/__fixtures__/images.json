@@ -2,16 +2,19 @@
   {
     "id": "D001",
     "preview": "https://mui.com/static/images/cards/contemplative-reptile.jpg",
+    "src": "https://mui.com/static/images/cards/contemplative-reptile.jpg",
     "author": "DanA"
   },
   {
     "id": "D002",
     "preview": "https://mui.com/static/images/cards/contemplative-reptile.jpg",
+    "src": "https://mui.com/static/images/cards/contemplative-reptile.jpg",
     "author": "DanB"
   },
   {
     "id": "D003",
     "preview": "https://mui.com/static/images/cards/contemplative-reptile.jpg",
+    "src": "https://mui.com/static/images/cards/contemplative-reptile.jpg",
     "author": "DanC"
   }
 ]
