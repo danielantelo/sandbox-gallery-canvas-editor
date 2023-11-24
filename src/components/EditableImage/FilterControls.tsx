@@ -1,5 +1,5 @@
 import { Box, Slider, Stack, Typography } from "@mui/material";
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 
 interface FilterControlsProps {
   blur: number;
@@ -14,15 +14,32 @@ export function FilterControls({
   onChangeBlur,
   onChangeGrayscale,
 }: FilterControlsProps) {
+  const [currentBlur, setCurrentBlur] = useState<number>(blur);
+  const [currentGrayscale, setCurrentGrayscale] = useState<number>(grayscale);
+
   const handleChangeBlur = (
     e: Event | SyntheticEvent<Element, Event>,
     value: number | number[]
-  ) => onChangeBlur(value as number);
+  ) => {
+    setCurrentBlur(Number(value));
+    onChangeBlur(Number(value));
+  };
 
   const handleChangeGrayscale = (
     e: Event | SyntheticEvent<Element, Event>,
     value: number | number[]
-  ) => onChangeGrayscale(value as number);
+  ) => {
+    setCurrentGrayscale(Number(value));
+    onChangeGrayscale(value as number);
+  };
+
+  useEffect(() => {
+    setCurrentBlur(blur);
+  }, [blur]);
+
+  useEffect(() => {
+    setCurrentGrayscale(grayscale);
+  }, [grayscale]);
 
   return (
     <Stack direction={"column"} gap={1} padding={2}>
@@ -30,7 +47,7 @@ export function FilterControls({
         <Typography id="blur-slider">Blur</Typography>
         <Slider
           aria-labelledby="blur-slider"
-          defaultValue={blur}
+          value={currentBlur}
           aria-label="Blur level"
           min={0}
           max={10}
@@ -42,7 +59,7 @@ export function FilterControls({
         <Typography id="grayscale-slider">Grayscale (%)</Typography>
         <Slider
           aria-labelledby="grayscale-slider"
-          defaultValue={grayscale}
+          value={currentGrayscale}
           aria-label="Grayscale level"
           min={0}
           max={100}

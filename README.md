@@ -45,8 +45,13 @@ Code confidence is THE most important thing for releasing software, so it is imp
 
 In a production ready setup we would also add **e2e tests** against a deployed instance and pontential some sort of **contract tests** for the api's. 
 
+## Deployed version
+
+Can view the built version @ (https://danielantelo.github.io/synthesia/)[https://danielantelo.github.io/synthesia/]
+
 ## What is missing that I would have liked to include
 
+- For a speedier editor experience, the initial image could be a fetched with a width of the browser width to ensure a smaller download or alternatively a prefetch of the full size image for when you select to edit it
 - Nice animated transition between gallery pages
-- A prefetch of the full size image for when you select to edit an image
 - Proper cypress tests, I only added the storybook visual regression and started on the webapp visual/functional
+- Github actions to test and deploy the app to gh-pages

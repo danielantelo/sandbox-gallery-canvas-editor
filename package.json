@@ -1,7 +1,6 @@
 {
   "name": "synthesia",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://danielantelo.github.io/synthesia",
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -46,7 +45,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://danielantelo.github.io/synthesia/ react-scripts build",
     "test": "react-scripts test",
     "typecheck": "tsc",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",

@@ -1,5 +1,5 @@
 import { Button, Stack, TextField } from "@mui/material";
-import { useRef } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export interface ResizeControlsProps {
   height: number;
@@ -12,35 +12,46 @@ export function ResizeControls({
   height,
   onChangeDimensions,
 }: ResizeControlsProps) {
-  const heightRef = useRef<HTMLInputElement>(null);
-  const widthRef = useRef<HTMLInputElement>(null);
+  const [currentHeight, setCurrentHeight] = useState<string>(height.toString());
+  const [currentWidth, setCurrentWidth] = useState<string>(width.toString());
+
+  const onChangeWidth = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setCurrentWidth(e.target.value);
+
+  const onChangeHeight = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setCurrentHeight(e.target.value);
+
+  useEffect(() => {
+    setCurrentHeight(height.toString());
+  }, [height]);
+
+  useEffect(() => {
+    setCurrentWidth(width.toString());
+  }, [width]);
 
   const handleApply = () => {
-    if (widthRef.current && heightRef.current) {
-      onChangeDimensions(
-        Number(widthRef.current.value),
-        Number(heightRef.current.value)
-      );
-    }
+    onChangeDimensions(Number(currentWidth), Number(currentHeight));
   };
 
   return (
     <Stack direction={"column"} gap={1} padding={1}>
       <TextField
         data-testid={"width-textfield"}
-        inputRef={widthRef}
         required
         id="outlined-required"
         label="Width"
-        defaultValue={width}
+        value={currentWidth}
+        onChange={onChangeWidth}
       />
       <TextField
         data-testid={"height-textfield"}
-        inputRef={heightRef}
         required
         id="outlined-required"
         label="Height"
-        defaultValue={height}
+        value={currentHeight}
+        onChange={onChangeHeight}
       />
       <Button variant="contained" onClick={handleApply}>
         Apply
