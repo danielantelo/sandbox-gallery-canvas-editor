@@ -8,6 +8,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
+    "gh-pages": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
@@ -52,7 +53,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "cy": "cypress run --e2e --browser chrome --headless --config baseUrl=http://localhost:3000/,specPattern='cypress/integration/webapp/*'",
-    "cy:storybook": "cypress run --e2e --browser chrome --headless --config baseUrl=http://localhost:6006/,specPattern='cypress/integration/storybook/*'"
+    "cy:storybook": "cypress run --e2e --browser chrome --headless --config baseUrl=http://localhost:6006/,specPattern='cypress/integration/storybook/*'",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
