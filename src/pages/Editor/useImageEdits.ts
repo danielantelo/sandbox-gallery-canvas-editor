@@ -8,18 +8,18 @@ export function useImageEdits() {
   const blur = Number(searchParams.get("blur")) || 0;
   const grayscale = Number(searchParams.get("grayscale")) || 0;
 
-  const updateSearchParam = (key: string, value: string) => {
-    let updatedSearchParams = new URLSearchParams(searchParams.toString());
-    updatedSearchParams.set(key, value);
-    setSearchParams(updatedSearchParams.toString());
-  };
-
   const onChangeBlur = (value: number) => {
-    updateSearchParam("blur", value.toString());
+    setSearchParams((searchParams) => {
+      searchParams.set("blur", value.toString());
+      return searchParams;
+    });
   };
 
   const onChangeGrayscale = (value: number) => {
-    updateSearchParam("grayscale", value.toString());
+    setSearchParams((searchParams) => {
+      searchParams.set("grayscale", value.toString());
+      return searchParams;
+    });
   };
 
   const onChangeDimensions = (width: number, height: number) => {

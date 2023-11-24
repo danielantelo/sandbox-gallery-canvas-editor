@@ -27,13 +27,13 @@ export default function Gallery() {
     >
       <Button disabled={pageNumber <= 1} onClick={onPrevPage}>
         <KeyboardArrowLeftIcon />
-        <Typography textTransform={"lowercase"}>Prev</Typography>
+        <Typography>Prev</Typography>
       </Button>
       <Box overflow={"auto"}>
         <GalleryListing images={data.images} />
       </Box>
       <Button disabled={!data.hasMore} onClick={onNextPage}>
-        <Typography textTransform={"lowercase"}>Next</Typography>
+        <Typography>Next</Typography>
         <KeyboardArrowRightIcon />
       </Button>
     </Stack>

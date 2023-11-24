@@ -26,10 +26,6 @@ export async function fetchImages(
   const request = await fetch(`${baseUrl}/v2/list?page=${page}&limit=${limit}`);
   const response: ApiImage[] = await request.json();
   const images = response.map(({ id, author, download_url }) => {
-    // @TODO alidate this - preload source image to  be cached for editor use
-    // is it the best place for this?
-    const preloader = new Image();
-    preloader.src = download_url;
     // return mapped version with a preview
     return {
       id,
