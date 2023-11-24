@@ -20,7 +20,7 @@ export function GalleryListing({ images }: GalleryListingProps) {
     <ImageList variant={"masonry"} cols={5} gap={8}>
       {images.map(({ id, preview, author }) => (
         <ImageListItem key={id}>
-          <Link component={RouterLink} to={`/edit/${id}`}>
+          <Link component={RouterLink} to={`/edit/${id}`} underline="none" color={'black'}>
             <Box>
               <img
                 width="100%"
