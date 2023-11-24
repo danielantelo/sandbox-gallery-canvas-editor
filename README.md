@@ -53,5 +53,6 @@ Can view the built version @ (https://danielantelo.github.io/synthesia/)[https:/
 
 - For a speedier editor experience, the initial image could be a fetched with a width of the browser width to ensure a smaller download or alternatively a prefetch of the full size image for when you select to edit it
 - Nice animated transition between gallery pages
+- Some responsive behaviour to the gallery listing
 - Proper cypress tests, I only added the storybook visual regression and started on the webapp visual/functional
 

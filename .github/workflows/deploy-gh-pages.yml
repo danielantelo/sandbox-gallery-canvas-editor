@@ -23,7 +23,7 @@ jobs:
         run: |
           APPCMD="npm run storybook"
           CYPRESSCMD="npm run cy:storybook --env requireSnapshots=true"
-          npx start-server-and-test "$APPCMD" 3000 "$CYPRESSCMD"       
+          npx start-server-and-test "$APPCMD" 6006 "$CYPRESSCMD"       
       - name: Run webapp tests
         run: |
           APPCMD="npm run start"
