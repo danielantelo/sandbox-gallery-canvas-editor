@@ -35,7 +35,6 @@ export function GalleryListing({ images }: GalleryListingProps) {
             color={"black"}
           >
             <Box>
-              <link rel="preload" as="image" href={src} />
               <img width="100%" src={preview} alt="" loading="lazy" />
             </Box>
             <ImageListItemBar subtitle={`by ${author}`} position="below" />

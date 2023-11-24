@@ -25,15 +25,12 @@ export async function fetchImages(
 ): Promise<GalleryImagesResponse> {
   const request = await fetch(`${baseUrl}/v2/list?page=${page}&limit=${limit}`);
   const response: ApiImage[] = await request.json();
-  const images = response.map(({ id, author, download_url }) => {
-    // return mapped version with a preview
-    return {
-      id,
-      author,
-      preview: `https://picsum.photos/id/${id}/200`,
-      src: download_url,
-    };
-  });
+  const images = response.map(({ id, author, download_url }) => ({
+    id,
+    author,
+    preview: `https://picsum.photos/id/${id}/200`,
+    src: download_url,
+  }));
 
   return {
     hasMore: !!request.headers.get("Link")?.includes('rel="next"'),
