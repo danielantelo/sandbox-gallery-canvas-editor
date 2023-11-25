@@ -6,5 +6,8 @@ addStoryBookCommands({
     // see https://docs.cypress.io/api/commands/viewport.html#Arguments
     desktop: [1920, 1080],
   },
-  registerSnapshotCommands: true, // false if you already include cypress-image-snapshot/command
+  registerSnapshotCommands: true,
+  preSnapshotFunc: () => {
+    cy.get('#storybook-root').invoke('attr', 'style', 'display: inline-block');
+  }
 });
