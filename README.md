@@ -51,7 +51,6 @@ Can view the built version @ (https://danielantelo.github.io/synthesia/)[https:/
 
 ## What is missing that I would have liked to include
 
-- Use a third party libary or polyfill for context filters to work on safari
 - For a speedier editor experience, the initial image could be fetched with the width of the browser to ensure a smaller download or alternatively we could do a prefetch of the full size image for when you select to edit it
 - A nicely animated transition between gallery pages
 - Some responsive behaviour to the gallery listing
