@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import {
@@ -8,7 +8,6 @@ import {
   Box,
   Button,
   Stack,
-  TextField,
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -41,21 +40,18 @@ export default function Editor() {
     onChangeDimensions,
   } = useImageEdits();
 
-  const fileNameRef = useRef<HTMLInputElement>(null);
-
   if (isLoading) return <Loading />;
   if (!data || error) return <>An error has occurred</>;
 
   const onDownloadImage = () => {
     if (canvasRef.current) {
-      downloadAsImage(canvasRef.current, fileNameRef.current?.name || 'edited.png');
+      downloadAsImage(canvasRef.current, "edited.png");
     }
   };
 
   const onDownloadOriginal = () => {
-    downloadImage(data.src, 'original.png');
+    downloadImage(data.src, "original.png");
   };
-
 
   return (
     <>
@@ -113,13 +109,6 @@ export default function Editor() {
             aria-controls="panel3a-content"
             id="panel3a-header"
           >
-             <TextField
-              required
-              id="outlined-required"
-              label="Height"
-              defaultValue={'edited.png'}
-              name={'fileName'}
-            />
             <Typography>Download</Typography>
           </AccordionSummary>
           <AccordionDetails>
