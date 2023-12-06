@@ -1,7 +1,7 @@
 {
-  "name": "synthesia",
+  "name": "sandbox-gallery-canvas-editor",
   "version": "0.1.0",
-  "homepage": "https://danielantelo.github.io/synthesia",
+  "homepage": "https://danielantelo.github.io/sandbox-gallery-canvas-editor/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -46,7 +46,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=https://danielantelo.github.io/synthesia/ react-scripts build",
+    "build": "PUBLIC_URL=https://danielantelo.github.io/sandbox-gallery-canvas-editor/ react-scripts build",
     "test": "react-scripts test",
     "typecheck": "tsc",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
