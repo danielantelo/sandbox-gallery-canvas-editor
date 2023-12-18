@@ -22,7 +22,7 @@ The API provides endpoints to fetch images with different dimensions and greysca
 
 To download the modified image I just covert the canvas to a data url and force a download via javascript. Similarly to download the original image to avoid any cross-origin issues and ensure it forces a file download I fetch the original image into blob content string and use it as the href of an anchor element.
 
-## Structure
+## Structure
 
 For simplicty, I opted to initialise a simple `create-react-app`, and divided the app into the following:
 
@@ -33,7 +33,7 @@ For simplicty, I opted to initialise a simple `create-react-app`, and divided th
 
 Potentially this could have been a yarn workspaces or similar, migration to which would be easy from the above structure, each component, api and util folder would become a versionable package.
 
-## Testing
+## Testing
 
 Code confidence is THE most important thing for releasing software, so it is important to cover your back from all angles! For this challenge we include:
 
@@ -45,4 +45,4 @@ In a production ready setup we would also add **e2e tests** against a deployed i
 
 ## Deployed version
 
-Can view the built version @ (https://danielantelo.github.io/sandbox-gallery-canvas-editor/)[https://danielantelo.github.io/sandbox-gallery-canvas-editor/]
+Can view the built version @ https://danielantelo.github.io/sandbox-gallery-canvas-editor/
